@@ -3,9 +3,8 @@ from django.db import models
 # Create your models here.
 class Projeto(models.Model):
     PROJETOS = (
-        ('Quadrilateros', 'Quadrilateros'),
-        ('Quadrilateros', 'Quadrilateros'),
-        ('Quadrilateros', 'Quadrilateros'),
+        ('Poligonos', 'Poligonos'),
+        ('Triangulos', 'Triangulos'),
         ('Quadrilateros', 'Quadrilateros')
     )
     QTD_PARTICIPANTES = (
