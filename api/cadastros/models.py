@@ -11,9 +11,15 @@ class Projeto(models.Model):
         (CIENCIAS, 'Ciências')
     )
 
+
+    QTDMAXMIN = (
+        ('3','3'),
+        ('4','4')
+    )
+
     materia = models.IntegerField(choices=MATERIA)
     descricao = models.CharField(max_length=50)
-    quantidade = models.IntegerField(min=3, max=4)
+    quantidade = models.IntegerField(choices=QTDMAXMIN)
 
     def __str__(self):
         return f'{self.pk}'
