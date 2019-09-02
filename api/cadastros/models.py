@@ -15,7 +15,8 @@ class Projeto(models.Model):
 
     QTDMAXMIN = (
         (3, '3'),
-        (4, '4')
+        (4, '4'),
+	(5, '5')
     )
 
     materia = models.IntegerField(choices=MATERIA)

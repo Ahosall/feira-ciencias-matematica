@@ -7,8 +7,8 @@ from .models import ParticipanteProjeto
 
 @admin.register(Projeto)
 class ProjetoAdmin(admin.ModelAdmin):
-    list_display = ('descricao', )
-    
+    list_display = ('descricao', 'materia')
+
 @admin.register(Participante)
 class ParticipanteAdmin(admin.ModelAdmin):
     list_display = ('nome',)
@@ -18,7 +18,7 @@ class ParticipanteProjetoInLine(admin.TabularInline):
 
 @admin.register(Evento)
 class EventoAdmin(admin.ModelAdmin):
-    list_display = ('descricao',)
+    list_display = ('descricao', 'projeto')
     inlines = [
        ParticipanteProjetoInLine
    ]
