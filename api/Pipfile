@@ -9,6 +9,7 @@ verify_ssl = true
 django-extensions = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.7"

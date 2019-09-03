@@ -13,14 +13,17 @@ class ProjetoViewSet(viewsets.ModelViewSet):
     serializer_class = ProjetoSerializer
     queryset = Projeto.objects.all()
 
+
 class ParticipanteViewSet(viewsets.ModelViewSet):
     serializer_class = ParticipanteSerializer
     queryset = Participante.objects.all()
+
 
 class EventoViewSet(viewsets.ModelViewSet):
     serializer_class = EventoSerializer
     queryset = Evento.objects.all()
 
+
 class ParticipanteProjetoViewSet(viewsets.ModelViewSet):
     serializer_class = ParticipanteProjetoSerializer
-    queryset = ParticipanteProjeto.objects.all()    
+    queryset = ParticipanteProjeto.objects.all()
