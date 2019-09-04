@@ -41,6 +41,7 @@ class Participante(models.Model):
     nome = models.CharField(max_length=200)
     email = models.EmailField(max_length=120)
     sexo = models.CharField(choices=SEXO, max_length=2)
+    grupo = models.ForeignKey(to='cadastros.Evento', on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nome

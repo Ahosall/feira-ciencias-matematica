@@ -7,6 +7,7 @@ from .models import Projeto
 from .models import ParticipanteProjeto
 from .models import Participante
 from .models import Evento
+from django_filters import rest_framework as filters
 
 
 class ProjetoViewSet(viewsets.ModelViewSet):
@@ -17,6 +18,8 @@ class ProjetoViewSet(viewsets.ModelViewSet):
 class ParticipanteViewSet(viewsets.ModelViewSet):
     serializer_class = ParticipanteSerializer
     queryset = Participante.objects.all()
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('id',)
 
 
 class EventoViewSet(viewsets.ModelViewSet):
@@ -27,3 +30,5 @@ class EventoViewSet(viewsets.ModelViewSet):
 class ParticipanteProjetoViewSet(viewsets.ModelViewSet):
     serializer_class = ParticipanteProjetoSerializer
     queryset = ParticipanteProjeto.objects.all()
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = '__all__'

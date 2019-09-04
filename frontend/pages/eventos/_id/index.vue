@@ -24,9 +24,9 @@ export default {
 
       let projeto = await $axios.$get(`/projetos/${evento.projeto}`);
 
-      let participanteProjeto = await $axios.$get(`/participantes-projetos/${params.id}`);
+      let participanteProjeto = await $axios.$get(`/participantes-projetos/?evento=${params.id}`);
 
-      let participantes = await $axios.$get(`/participantes/${participanteProjeto.evento}`);
+      let participantes = await $axios.$get(`/participantes/${participanteProjeto.participante}`);
       
       return { evento, projeto, participanteProjeto, participantes };
     } catch (e) {
