@@ -19,7 +19,7 @@ class ParticipanteViewSet(viewsets.ModelViewSet):
     serializer_class = ParticipanteSerializer
     queryset = Participante.objects.all()
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = ('id',)
+    filter_fields = ('id', 'grupo')
 
 
 class EventoViewSet(viewsets.ModelViewSet):

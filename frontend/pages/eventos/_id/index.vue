@@ -4,8 +4,8 @@
 
     <v-card-text>
       <h3>Projeto : {{ projeto.descricao }}</h3>
-      <div v-for="p in participantes" :key="p.id">
-          <h3>Alunos : {{ participantes.nome }}</h3>
+      <div v-for="pp in participanteProjeto" :key="pp.id">
+          <h3>Alunos : {{ pp.participante }}</h3>
       </div>
     </v-card-text>
   </v-card>
@@ -26,11 +26,11 @@ export default {
 
       let participanteProjeto = await $axios.$get(`/participantes-projetos/?evento=${params.id}`);
 
-      let participantes = await $axios.$get(`/participantes/${participanteProjeto.participante}`);
+      //let participantes = await $axios.$get(`/participantes/?grupo=${participanteProjeto.participante}`);
       
-      return { evento, projeto, participanteProjeto, participantes };
+      return { evento, projeto, participanteProjeto };
     } catch (e) {
-      return { evento: [], projeto: [], participanteProjeto: [], participantes: [] };
+      return { evento: [], projeto: [], participanteProjeto: [] };
     }
   },
   data() {
@@ -46,9 +46,6 @@ export default {
       participanteProjeto: {
         id: "",
         participante: ""
-      },
-      participantes: {
-        nome: ""
       }
     };
   }

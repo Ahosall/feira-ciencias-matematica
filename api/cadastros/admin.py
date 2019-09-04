@@ -11,7 +11,7 @@ class ProjetoAdmin(admin.ModelAdmin):
 
 @admin.register(Participante)
 class ParticipanteAdmin(admin.ModelAdmin):
-    list_display = ('nome',)
+    list_display = ('id', 'nome')
 
 class ParticipanteProjetoInLine(admin.TabularInline):
     model = ParticipanteProjeto

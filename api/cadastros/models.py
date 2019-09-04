@@ -38,10 +38,20 @@ class Participante(models.Model):
         ('M', 'Masculino')
     )
 
+    GRUPOS = (
+        ('1', 'GRUPO - 1 - CIENCIAS'),
+        ('2', 'GRUPO - 2 - CIENCIAS'),
+        ('3', 'GRUPO - 3 - CIENCIAS'),
+        ('4', 'GRUPO - 4 - CIENCIAS'),
+        ('5', 'GRUPO - 1 - MATEMATICA'),
+        ('6', 'GRUPO - 2 - MATEMATICA'),
+        ('7', 'GRUPO - 3 - MATEMATICA')
+
+    )
     nome = models.CharField(max_length=200)
     email = models.EmailField(max_length=120)
     sexo = models.CharField(choices=SEXO, max_length=2)
-    grupo = models.ForeignKey(to='cadastros.Evento', on_delete=models.DO_NOTHING)
+    grupo = models.CharField(choices=GRUPOS, max_length=2)
 
     def __str__(self):
         return self.nome

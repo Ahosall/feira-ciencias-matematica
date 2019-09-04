@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='participante',
             name='grupo',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='cadastros.Evento'),
+            field=models.CharField(choices=[('1', 'GRUPO - 1 - CIENCIAS'), ('2', 'GRUPO - 2 - CIENCIAS'), ('3', 'GRUPO - 3 - CIENCIAS'), ('4', 'GRUPO - 4 - CIENCIAS'), ('5', 'GRUPO - 1 - MATEMATICA'), ('6', 'GRUPO - 2 - MATEMATICA'), ('7', 'GRUPO - 3 - MATEMATICA')], max_length=2),
         ),
     ]
